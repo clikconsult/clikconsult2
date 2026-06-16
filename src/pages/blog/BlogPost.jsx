@@ -38,6 +38,17 @@ function ContentBlock({ block }) {
           ))}
         </ul>
       );
+    case 'cta':
+      return (
+        <div className="card-glass p-6 md:p-7 bg-gradient-to-br from-primary/10 to-blue-500/5 border-primary/20 my-10">
+          <p className="font-display font-bold text-white text-xl leading-snug mb-4">
+            {block.text}
+          </p>
+          <Link to={block.href || '/contact'} className="btn-primary px-5 py-2.5">
+            {block.buttonText || 'Talk to us'} <ArrowRight size={15} />
+          </Link>
+        </div>
+      );
     default:
       return null;
   }
