@@ -3,7 +3,7 @@ import ServicePage from '../../components/ServicePage';
 
 const data = {
   seo: {
-    title: 'Business Automation and Web Automation Services',
+    title: 'Business & Web Automation Services in Nigeria',
     description: 'Clikconsult automates workflows, reporting, CRM pipelines, web scraping, and API integrations for growing Nigerian businesses.',
     path: '/services/web-automations',
   },

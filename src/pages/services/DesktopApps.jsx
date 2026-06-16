@@ -3,7 +3,7 @@ import ServicePage from '../../components/ServicePage';
 
 const data = {
   seo: {
-    title: 'Desktop Application Development',
+    title: 'Desktop Application Development In Nigeria',
     description: 'Clikconsult builds custom desktop software for Windows, Mac, and Linux, including POS systems, dashboards, and offline business tools.',
     path: '/services/desktop-apps',
   },

@@ -4,7 +4,7 @@ import ServicePage from '../../components/ServicePage';
 const data = {
   seo: {
     title: 'Mobile App Development in Nigeria',
-    description: 'Clikconsult designs and develops iOS, Android, React Native, and Flutter mobile apps for businesses in Nigeria and beyond.',
+    description: 'Clikconsult builds cross-platform iOS and Android mobile apps using React Native and Flutter for businesses in Nigeria. From MVP to app store launch.',
     path: '/services/mobile-apps',
   },
   hero: {

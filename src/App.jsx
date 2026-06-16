@@ -13,6 +13,7 @@ import Contact from './pages/Contact';
 import Careers from './pages/Careers';
 import NotFound from './pages/NotFound';
 import { Privacy, Terms } from './pages/Legal';
+import { AbujaPage, AkwaIbomPage, LagosPage, PortHarcourtPage, UyoPage } from './pages/Locations';
 
 import WebDevelopment from './pages/services/WebDevelopment';
 import MobileApps from './pages/services/MobileApps';
@@ -42,6 +43,13 @@ function Layout() {
         <Route path="/careers" element={<Careers />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
+
+        {/* Location pages */}
+        <Route path="/locations/uyo" element={<UyoPage />} />
+        <Route path="/locations/akwa-ibom" element={<AkwaIbomPage />} />
+        <Route path="/locations/lagos" element={<LagosPage />} />
+        <Route path="/locations/abuja" element={<AbujaPage />} />
+        <Route path="/locations/port-harcourt" element={<PortHarcourtPage />} />
 
         {/* Dev service pages */}
         <Route path="/services/web-development" element={<WebDevelopment />} />
