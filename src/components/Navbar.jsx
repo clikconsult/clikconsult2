@@ -6,6 +6,7 @@ import {
   Code2,
   FileText,
   Globe,
+  Globe2,
   Laptop,
   Mail,
   Megaphone,
@@ -135,6 +136,9 @@ export default function Navbar() {
 
             <Link to="/portfolio" className={`px-4 py-2 rounded-full text-sm transition-colors ${isActive('/portfolio') ? 'text-primary' : 'text-white/70 hover:text-white'}`}>Portfolio</Link>
             <Link to="/blog" className={`px-4 py-2 rounded-full text-sm transition-colors ${isSectionActive('/blog') ? 'text-primary' : 'text-white/70 hover:text-white'}`}>Insights</Link>
+            <Link to="/global" className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm transition-colors ${isActive('/global') ? 'text-primary' : 'text-white/70 hover:text-white'}`}>
+              <Globe2 size={14} /> US &amp; Canada
+            </Link>
             <Link to="/contact" className={`px-4 py-2 rounded-full text-sm transition-colors ${isActive('/contact') ? 'text-primary' : 'text-white/70 hover:text-white'}`}>Contact</Link>
           </div>
 
@@ -201,6 +205,9 @@ export default function Navbar() {
                 </AnimatePresence>
                 <Link to="/portfolio" className="py-3 text-sm text-white/80 border-t border-white/5">Portfolio</Link>
                 <Link to="/blog" className={`py-3 text-sm border-b border-white/5 ${isSectionActive('/blog') ? 'text-primary' : 'text-white/80'}`}>Insights</Link>
+                <Link to="/global" className={`flex items-center gap-2 py-3 text-sm border-b border-white/5 ${isActive('/global') ? 'text-primary' : 'text-white/80'}`}>
+                  <Globe2 size={15} /> US &amp; Canada
+                </Link>
                 <Link to="/contact" className="py-3 text-sm text-white/80">Contact</Link>
                 <Link to="/contact" className="btn-primary mt-3 justify-center">Get a Free Quote</Link>
               </div>

@@ -14,7 +14,7 @@ import Careers from './pages/Careers';
 import NotFound from './pages/NotFound';
 import { Privacy, Terms } from './pages/Legal';
 import { AbujaPage, AkwaIbomPage, LagosPage, PortHarcourtPage, UyoPage } from './pages/Locations';
-
+import Global from './pages/Global';
 import WebDevelopment from './pages/services/WebDevelopment';
 import MobileApps from './pages/services/MobileApps';
 import DesktopApps from './pages/services/DesktopApps';
@@ -50,7 +50,8 @@ function Layout() {
         <Route path="/locations/lagos" element={<LagosPage />} />
         <Route path="/locations/abuja" element={<AbujaPage />} />
         <Route path="/locations/port-harcourt" element={<PortHarcourtPage />} />
-
+        <Route path="/global" element={<Global />} />
+        
         {/* Dev service pages */}
         <Route path="/services/web-development" element={<WebDevelopment />} />
         <Route path="/services/mobile-apps" element={<MobileApps />} />
