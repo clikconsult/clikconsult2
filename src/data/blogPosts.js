@@ -469,12 +469,6 @@ export const posts = [
         type: "p",
         text: "Does Clikconsult manage Google Ads campaigns in Nigeria? Yes — we manage Google Ads campaigns for Nigerian businesses with a focus on cost per lead and ROAS, not just traffic. Contact us for a free account audit.",
       },
-      {
-        type: "cta",
-        text: "Ready to start generating leads with Google Ads?",
-        buttonText: "Let's talk",
-        href: "/contact",
-      },
     ],
   },
   {
@@ -702,12 +696,6 @@ export const posts = [
       {
         type: "p",
         text: "Does Clikconsult offer web design services in Uyo? Yes — we're based in Uyo and offer web design, mobile app development, digital marketing, and business automation for businesses across Akwa Ibom and Nigeria.",
-      },
-      {
-        type: "cta",
-        text: "Ready to build a website that actually works for your Uyo business?",
-        buttonText: "Get a free consultation",
-        href: "/contact",
       },
     ],
   },
@@ -958,12 +946,6 @@ export const posts = [
         type: "p",
         text: "Does Clikconsult offer affordable web design in Nigeria? Yes — we work across a range of budgets and structure payments to be manageable. Contact us for a free quote tailored to your specific project.",
       },
-      {
-        type: "cta",
-        text: "Ready to get an honest quote for your website?",
-        buttonText: "Contact us",
-        href: "/contact",
-      },
     ],
   },
   {
@@ -1113,12 +1095,6 @@ export const posts = [
         type: "p",
         text: "Does Clikconsult offer digital marketing services in Akwa Ibom? Yes — we serve businesses across Akwa Ibom State with SEO, Google Ads, social media, content marketing, and email marketing. Contact us for a free digital marketing audit.",
       },
-      {
-        type: "cta",
-        text: "Ready to grow your Akwa Ibom business with digital marketing?",
-        buttonText: "Get a free audit",
-        href: "/contact",
-      },
     ],
   },
   {
@@ -1255,12 +1231,6 @@ export const posts = [
       {
         type: "p",
         text: "Does Clikconsult build websites for small businesses in Uyo? Yes — we build professional websites for Uyo businesses at a range of price points. Contact us for a free consultation and honest quote.",
-      },
-      {
-        type: "cta",
-        text: "Ready to get your Uyo business online?",
-        buttonText: "Let's talk",
-        href: "/contact",
       },
     ],
   },
@@ -1486,12 +1456,6 @@ export const posts = [
       {
         type: "p",
         text: "Does Clikconsult offer automation services in Nigeria? Yes — we build web automation and business automation solutions for Nigerian businesses. Contact us for a free workflow audit.",
-      },
-      {
-        type: "cta",
-        text: "Ready to stop doing manually what a computer can do automatically?",
-        buttonText: "Let's talk automation",
-        href: "/contact",
       },
     ],
   },
@@ -1720,12 +1684,6 @@ export const posts = [
       {
         type: "p",
         text: "Which framework has better jobs prospects in Nigeria? React Native currently has significantly more job opportunities in Nigeria due to the larger JavaScript developer pool. Flutter opportunities are growing but still fewer.",
-      },
-      {
-        type: "cta",
-        text: "Have a mobile app idea?",
-        buttonText: "Let's discuss your project",
-        href: "/contact",
       },
     ],
   },
@@ -2030,12 +1988,6 @@ export const posts = [
       {
         type: "p",
         text: "Does Clikconsult offer SEO services in Nigeria? Yes — we provide technical SEO, on-page optimisation, content marketing, and link building for Nigerian businesses. Contact us for a free SEO audit of your website.",
-      },
-      {
-        type: "cta",
-        text: "Ready to get your Nigerian business ranking on Google?",
-        buttonText: "Get a free SEO audit",
-        href: "/contact",
       },
     ],
   },
