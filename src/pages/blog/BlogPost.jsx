@@ -109,7 +109,7 @@ export default function BlogPost() {
           <span className="flex items-center gap-1.5"><Calendar size={13} /> {post.date}</span>
           <span className="flex items-center gap-1.5"><Clock size={13} /> {post.readTime} read</span>
           <span className="text-white/15">·</span>
-          <span className="text-white/30">By Clikconsult Team</span>
+          <span className="text-white/30">By Akan Udoette</span>
         </div>
       </motion.section>
 

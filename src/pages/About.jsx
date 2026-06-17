@@ -21,7 +21,7 @@ export default function About() {
     <main className="pt-32">
       <SEO
         title="About Clikconsult"
-        description="Learn about Clikconsult, a Nigerian digital agency helping businesses grow through web design, apps, automation, digital marketing, and IT consulting."
+        description="Learn about Clikconsult — a Nigerian digital agency founded in Lagos in 2018, helping businesses grow through web design, apps, automation, and digital marketing."
         path="/about"
       />
       {/* Hero */}

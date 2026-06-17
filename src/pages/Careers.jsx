@@ -47,8 +47,8 @@ export default function Careers() {
   return (
     <main className="pt-32">
       <SEO
-        title="Careers"
-        description="Explore career opportunities at Clikconsult and join a Nigerian digital agency building websites, apps, automations, and marketing campaigns."
+        title="Careers at Clikconsult | Join Our Team in Nigeria"
+        description="Join the Clikconsult team. We're hiring React developers, designers, mobile engineers, and digital marketers. Remote-first roles based in Nigeria."
         path="/careers"
       />
       {/* Hero */}

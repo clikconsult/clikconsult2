@@ -90,8 +90,8 @@ export default function Portfolio() {
   return (
     <main className="pt-32">
       <SEO
-        title="Portfolio"
-        description="Explore Clikconsult projects across web development, mobile apps, automation, and digital marketing for growing businesses."
+        title="Portfolio | Web, Mobile & Marketing Projects"
+        description="See Clikconsult's portfolio of web development, mobile app, automation, and digital marketing projects — with real results for Nigerian and global businesses."
         path="/portfolio"
       />
       {/* Hero */}

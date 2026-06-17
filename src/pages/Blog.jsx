@@ -11,8 +11,8 @@ export default function Blog() {
   return (
     <main className="pt-32">
       <SEO
-        title="Digital Growth Insights"
-        description="Read practical Clikconsult guides on web development, SEO, digital marketing, automation, mobile apps, and online growth for Nigerian businesses."
+        title="Blog | Web Development & Digital Marketing Tips"
+        description="Practical guides on web development, SEO, digital marketing, automation, and online business growth for Nigerian entrepreneurs."
         path="/blog"
       />
       {/* Hero */}

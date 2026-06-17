@@ -33,8 +33,8 @@ export default function Contact() {
   return (
     <main className="pt-32">
       <SEO
-        title="Contact Clikconsult"
-        description="Contact Clikconsult for web design, digital marketing, automation, mobile app development, and IT consulting services in Nigeria."
+        title="Contact Clikconsult | Get a Free Consultation"
+        description="Get in touch with Clikconsult. We reply within 24 hours. Book a free consultation for web design, mobile apps, digital marketing, or automation services in Nigeria."
         path="/contact"
       />
       {/* Hero */}
