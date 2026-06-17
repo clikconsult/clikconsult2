@@ -40,14 +40,28 @@ function ContentBlock({ block }) {
       );
     case 'cta':
       return (
-        <div className="card-glass p-6 md:p-7 bg-gradient-to-br from-primary/10 to-blue-500/5 border-primary/20 my-10">
-          <p className="font-display font-bold text-white text-xl leading-snug mb-4">
-            {block.text}
-          </p>
-          <Link to={block.href || '/contact'} className="btn-primary px-5 py-2.5">
-            {block.buttonText || 'Talk to us'} <ArrowRight size={15} />
-          </Link>
-        </div>
+        <aside className="my-12 border-y border-white/10 py-6">
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-start gap-4">
+              <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-primary shadow-[0_0_18px_rgba(11,206,175,0.45)]" />
+              <div>
+                <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary/80">
+                  Next step
+                </p>
+                <p className="font-display text-xl font-semibold leading-snug text-white">
+                  {block.text}
+                </p>
+              </div>
+            </div>
+            <Link
+              to={block.href || '/contact'}
+              className="group inline-flex shrink-0 items-center gap-2 self-start rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm font-semibold text-white/75 transition-all hover:border-primary/50 hover:bg-primary/10 hover:text-primary sm:self-center"
+            >
+              {block.buttonText || 'Talk to us'}
+              <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
+            </Link>
+          </div>
+        </aside>
       );
     default:
       return null;
