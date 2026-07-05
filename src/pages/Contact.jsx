@@ -18,16 +18,31 @@ export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', service: '', budget: '', message: '' });
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const handle = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   const submit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate submission
-    await new Promise(r => setTimeout(r, 1200));
-    setLoading(false);
-    setSent(true);
+    setError(null);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSent(true);
+      } else {
+        setError('Something went wrong. Please try again or email us directly.');
+      }
+    } catch (err) {
+      setError('Something went wrong. Please try again or email us directly.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -60,8 +75,8 @@ export default function Contact() {
                 <Mail size={18} className="text-primary" />
               </div>
               <p className="text-white font-medium text-sm mb-1">Email us</p>
-              <a href="mailto:hello@clikconsult.com" className="text-white/40 text-sm hover:text-primary transition-colors">
-                hello@clikconsult.com
+              <a href="mailto:contact@clikconsult.com.ng" className="text-white/40 text-sm hover:text-primary transition-colors">
+                contact@clikconsult.com.ng
               </a>
             </div>
           </Reveal>
@@ -205,6 +220,10 @@ export default function Contact() {
                       className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-primary/50 transition-colors resize-none"
                     />
                   </div>
+
+                  {error && (
+                    <p className="text-red-400 text-sm text-center">{error}</p>
+                  )}
 
                   <button
                     type="submit"
