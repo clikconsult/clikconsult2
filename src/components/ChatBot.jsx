@@ -182,9 +182,9 @@ export default function ChatBot() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 18, scale: 0.96 }}
             transition={{ duration: 0.2, ease: 'easeOut' }}
-            className="mb-3 w-[calc(100vw-2rem)] max-w-[340px] overflow-hidden rounded-2xl border border-white/10 bg-dark-2/95 shadow-2xl shadow-black/50 backdrop-blur-xl"
+            className="mb-3 flex w-[calc(100vw-2rem)] max-w-[340px] max-h-[calc(100vh-6rem)] flex-col overflow-hidden rounded-2xl border border-white/10 bg-dark-2/95 shadow-2xl shadow-black/50 backdrop-blur-xl"
           >
-            <div className="border-b border-white/10 bg-mesh px-3.5 py-3">
+            <div className="shrink-0 border-b border-white/10 bg-mesh px-3.5 py-3">
               <div className="flex items-start justify-between gap-4">
                 <div className="flex items-center gap-3">
                   <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-dark shadow-[0_0_28px_rgba(11,206,175,0.25)]">
@@ -229,7 +229,7 @@ export default function ChatBot() {
               </div>
             </div>
 
-            <div className="max-h-[360px] overflow-y-auto px-3.5 py-3.5">
+            <div className="min-h-0 flex-1 overflow-y-auto px-3.5 py-3.5">
               {messages.length <= 1 && (
                 <div className="mb-3 grid grid-cols-1 gap-2">
                   {serviceCards.map(({ icon: Icon, title, text, path }) => (
@@ -272,7 +272,7 @@ export default function ChatBot() {
               </div>
             </div>
 
-            <div className="border-t border-white/10 px-3.5 py-3.5">
+            <div className="shrink-0 border-t border-white/10 px-3.5 py-3.5">
               {messages.length <= 1 && (
                 <div className="mb-2.5 flex flex-wrap gap-1.5">
                   {quickReplies.map((reply) => (
