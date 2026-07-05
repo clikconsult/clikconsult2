@@ -16,6 +16,10 @@ import {
   X,
 } from 'lucide-react';
 
+const WHATSAPP_NUMBER = '2349038544515';
+const whatsappLink = (text) =>
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+
 const quickReplies = [
   { label: 'Build a website', value: 'I need a website or web app' },
   { label: 'Market my business', value: 'I need help with digital marketing' },
@@ -51,53 +55,65 @@ const initialMessages = [
   },
 ];
 
+// Ordered list of keyword rules. First match wins, so put more specific rules first.
+const rules = [
+  {
+    keywords: ['price', 'cost', 'budget', 'quote', 'how much', 'expensive', 'cheap', 'rate'],
+    text: 'Pricing depends on scope, timeline, and integrations. The fastest next step is a short discovery call so the team can give you a clear quote.',
+    cta: { label: 'Request a quote', path: '/contact' },
+  },
+  {
+    keywords: ['how long', 'timeline', 'turnaround', 'when can', 'deadline', 'duration'],
+    text: 'Timelines vary by project size — a simple site can take 1-2 weeks, while a full app or platform can take 4-8+ weeks. Share your scope on a quick call and the team will give you a realistic timeline.',
+    cta: { label: 'Book a consultation', path: '/contact' },
+  },
+  {
+    keywords: ['market', 'seo', 'ads', 'ppc', 'google ads', 'social media', 'email marketing', 'grow my business', 'traffic', 'ranking'],
+    text: 'Digital marketing sounds like the best starting point. Clikconsult can help with SEO, paid ads, social media, email, content, CRO, and analytics.',
+    cta: { label: 'Explore marketing', path: '/services/digital-marketing' },
+  },
+  {
+    keywords: ['automat', 'workflow', 'integration', 'repetitive', 'manual work', 'connect my tools', 'zapier'],
+    text: 'Automation is a strong fit. The team can connect tools, remove repetitive tasks, and build custom workflows for your business.',
+    cta: { label: 'View automations', path: '/services/web-automations' },
+  },
+  {
+    keywords: ['mobile', 'android', 'ios', 'app for my', 'flutter', 'react native'],
+    text: 'For a mobile product, start with the mobile apps service. A good brief should include users, core features, login/payment needs, and launch timeline.',
+    cta: { label: 'View mobile apps', path: '/services/mobile-apps' },
+  },
+  {
+    keywords: ['desktop', 'windows app', 'mac app', 'offline software'],
+    text: 'For desktop software, Clikconsult builds tools for Windows and Mac tailored to internal workflows — inventory, POS, reporting, and more.',
+    cta: { label: 'View desktop apps', path: '/services/desktop-apps' },
+  },
+  {
+    keywords: ['website', 'web app', 'dashboard', 'portal', 'landing page', 'rebuild my site', 'redesign', 'ecommerce', 'online store'],
+    text: 'A web build sounds right. Clikconsult can help with marketing sites, web apps, dashboards, portals, online stores, and performance-focused rebuilds.',
+    cta: { label: 'View web development', path: '/services/web-development' },
+  },
+  {
+    keywords: ['career', 'job', 'hire me', 'vacancy', 'internship', 'work with you'],
+    text: 'For openings or collaboration, the careers page is the best place to start.',
+    cta: { label: 'Open careers', path: '/careers' },
+  },
+  {
+    keywords: ['hello', 'hi', 'hey', 'good morning', 'good afternoon'],
+    text: "Hello! Tell me a bit about what you're trying to build, grow, or automate, and I'll point you to the right service.",
+  },
+];
+
 function getBotReply(message) {
   const text = message.toLowerCase();
 
-  if (text.includes('price') || text.includes('cost') || text.includes('budget') || text.includes('quote')) {
-    return {
-      text: 'Pricing depends on scope, timeline, and integrations. The fastest next step is a short discovery call so the team can give you a clear quote.',
-      cta: { label: 'Request a quote', path: '/contact' },
-    };
-  }
-
-  if (text.includes('market') || text.includes('seo') || text.includes('ads') || text.includes('social') || text.includes('email')) {
-    return {
-      text: 'Digital marketing sounds like the best starting point. Clikconsult can help with SEO, paid ads, social media, email, content, CRO, and analytics.',
-      cta: { label: 'Explore marketing', path: '/services/digital-marketing' },
-    };
-  }
-
-  if (text.includes('automat') || text.includes('workflow') || text.includes('integration') || text.includes('repetitive')) {
-    return {
-      text: 'Automation is a strong fit. The team can connect tools, remove repetitive tasks, and build custom workflows for your business.',
-      cta: { label: 'View automations', path: '/services/web-automations' },
-    };
-  }
-
-  if (text.includes('mobile') || text.includes('android') || text.includes('ios') || text.includes('app')) {
-    return {
-      text: 'For a mobile product, start with the mobile apps service. A good brief should include users, core features, login/payment needs, and launch timeline.',
-      cta: { label: 'View mobile apps', path: '/services/mobile-apps' },
-    };
-  }
-
-  if (text.includes('website') || text.includes('web') || text.includes('dashboard') || text.includes('portal')) {
-    return {
-      text: 'A web build sounds right. Clikconsult can help with marketing sites, web apps, dashboards, portals, and performance-focused rebuilds.',
-      cta: { label: 'View web development', path: '/services/web-development' },
-    };
-  }
-
-  if (text.includes('career') || text.includes('job') || text.includes('hire')) {
-    return {
-      text: 'For openings or collaboration, the careers page is the best place to start.',
-      cta: { label: 'Open careers', path: '/careers' },
-    };
+  for (const rule of rules) {
+    if (rule.keywords.some((kw) => text.includes(kw))) {
+      return { text: rule.text, cta: rule.cta };
+    }
   }
 
   return {
-    text: 'Got it. The team can help shape that into a clear plan. Share your goal, preferred timeline, and the main result you want, then book a free consultation.',
+    text: 'Got it. The team can help shape that into a clear plan. Share your goal, preferred timeline, and the main result you want, then book a free consultation — or message us directly on WhatsApp.',
     cta: { label: 'Contact the team', path: '/contact' },
   };
 }
@@ -147,10 +163,14 @@ export default function ChatBot() {
     setMessages((current) => [...current, { from: 'user', text: clean }]);
     setTyping(true);
 
+    // Scale the "typing" delay slightly with reply length so it feels a bit more natural
+    const reply = getBotReply(clean);
+    const delay = Math.min(400 + reply.text.length * 4, 1400);
+
     window.setTimeout(() => {
-      setMessages((current) => [...current, { from: 'bot', ...getBotReply(clean) }]);
+      setMessages((current) => [...current, { from: 'bot', ...reply }]);
       setTyping(false);
-    }, 550);
+    }, delay);
   };
 
   return (
@@ -179,6 +199,16 @@ export default function ChatBot() {
                   </div>
                 </div>
                 <div className="flex items-center gap-1">
+                  <a
+                    href={whatsappLink("Hi, I'd like to talk about a project.")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex h-7 w-7 items-center justify-center rounded-full text-white/45 transition-colors hover:bg-white/10 hover:text-primary"
+                    aria-label="Continue on WhatsApp"
+                    title="Continue on WhatsApp"
+                  >
+                    <MessageCircle size={14} />
+                  </a>
                   <button
                     type="button"
                     onClick={() => setMinimized(true)}
@@ -200,23 +230,25 @@ export default function ChatBot() {
             </div>
 
             <div className="max-h-[360px] overflow-y-auto px-3.5 py-3.5">
-              <div className="mb-3 grid grid-cols-1 gap-2">
-                {serviceCards.map(({ icon: Icon, title, text, path }) => (
-                  <Link
-                    key={title}
-                    to={path}
-                    className="group flex gap-2.5 rounded-xl border border-white/10 bg-white/[0.03] p-2.5 transition-all hover:border-primary/40 hover:bg-primary/5"
-                  >
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/5 text-primary">
-                      <Icon size={15} />
-                    </span>
-                    <span>
-                      <span className="block text-xs font-semibold text-white group-hover:text-primary">{title}</span>
-                      <span className="mt-0.5 block text-[11px] leading-relaxed text-white/35">{text}</span>
-                    </span>
-                  </Link>
-                ))}
-              </div>
+              {messages.length <= 1 && (
+                <div className="mb-3 grid grid-cols-1 gap-2">
+                  {serviceCards.map(({ icon: Icon, title, text, path }) => (
+                    <Link
+                      key={title}
+                      to={path}
+                      className="group flex gap-2.5 rounded-xl border border-white/10 bg-white/[0.03] p-2.5 transition-all hover:border-primary/40 hover:bg-primary/5"
+                    >
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/5 text-primary">
+                        <Icon size={15} />
+                      </span>
+                      <span>
+                        <span className="block text-xs font-semibold text-white group-hover:text-primary">{title}</span>
+                        <span className="mt-0.5 block text-[11px] leading-relaxed text-white/35">{text}</span>
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              )}
 
               <div className="space-y-3">
                 {messages.map((message, index) => (
@@ -241,18 +273,20 @@ export default function ChatBot() {
             </div>
 
             <div className="border-t border-white/10 px-3.5 py-3.5">
-              <div className="mb-2.5 flex flex-wrap gap-1.5">
-                {quickReplies.map((reply) => (
-                  <button
-                    key={reply.label}
-                    type="button"
-                    onClick={() => sendMessage(reply.value)}
-                    className="rounded-full border border-white/10 px-2.5 py-1 text-[11px] text-white/55 transition-colors hover:border-primary/40 hover:text-primary"
-                  >
-                    {reply.label}
-                  </button>
-                ))}
-              </div>
+              {messages.length <= 1 && (
+                <div className="mb-2.5 flex flex-wrap gap-1.5">
+                  {quickReplies.map((reply) => (
+                    <button
+                      key={reply.label}
+                      type="button"
+                      onClick={() => sendMessage(reply.value)}
+                      className="rounded-full border border-white/10 px-2.5 py-1 text-[11px] text-white/55 transition-colors hover:border-primary/40 hover:text-primary"
+                    >
+                      {reply.label}
+                    </button>
+                  ))}
+                </div>
+              )}
 
               <form
                 onSubmit={(event) => {
@@ -276,6 +310,16 @@ export default function ChatBot() {
                   <Send size={14} />
                 </button>
               </form>
+
+              <a
+                href={whatsappLink("Hi, I'd like to talk about a project.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2.5 flex items-center justify-center gap-1.5 text-[11px] text-white/35 hover:text-primary transition-colors"
+              >
+                <MessageCircle size={12} />
+                Prefer WhatsApp? Continue there instead
+              </a>
             </div>
           </motion.div>
         )}
