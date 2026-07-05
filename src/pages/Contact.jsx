@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle, MessageSquare, CalendarDays } from 'lucide-react';
 import Reveal from '../components/Reveal';
 import SEO from '../components/SEO';
+import CalendlyEmbed from '../components/CalendlyEmbed';
 
 const services = [
   'Web Development',
@@ -19,6 +20,7 @@ export default function Contact() {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [activeTab, setActiveTab] = useState('form'); // 'form' | 'calendar'
 
   const handle = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -127,7 +129,33 @@ export default function Contact() {
         <div className="lg:col-span-2">
           <Reveal delay={0.1}>
             <div className="card-glass p-8 md:p-10">
-              {sent ? (
+              {/* Tab switcher */}
+              <div className="flex gap-2 mb-8 p-1 bg-white/5 rounded-xl border border-white/10 w-fit">
+                <button
+                  type="button"
+                  onClick={() => setActiveTab('form')}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    activeTab === 'form' ? 'bg-primary text-dark' : 'text-white/50 hover:text-white'
+                  }`}
+                >
+                  <MessageSquare size={15} />
+                  Send a message
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveTab('calendar')}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    activeTab === 'calendar' ? 'bg-primary text-dark' : 'text-white/50 hover:text-white'
+                  }`}
+                >
+                  <CalendarDays size={15} />
+                  Book a call
+                </button>
+              </div>
+
+              {activeTab === 'calendar' ? (
+                <CalendlyEmbed />
+              ) : sent ? (
                 <div className="text-center py-16">
                   <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
                     <CheckCircle size={32} className="text-primary" />
