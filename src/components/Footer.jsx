@@ -1,8 +1,34 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Send, Rss, Globe, AtSign } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Rss, Globe, AtSign, Check } from 'lucide-react';
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState('idle'); // idle | loading | success | error
+
+  const handleNewsletterSubmit = async (e) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setStatus('loading');
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStatus('success');
+        setEmail('');
+      } else {
+        setStatus('error');
+      }
+    } catch (err) {
+      setStatus('error');
+    }
+  };
 
   return (
     <footer className="bg-dark-2 border-t border-white/5">
@@ -82,7 +108,7 @@ export default function Footer() {
           <ul className="space-y-4">
             <li className="flex gap-3 items-start">
               <Mail size={15} className="text-primary mt-0.5 shrink-0" />
-              <a href="mailto:udoettea@gmail.com" className="text-white/40 hover:text-white text-sm transition-colors">hello@clikconsult.com</a>
+              <a href="mailto:contact@clikconsult.com.ng" className="text-white/40 hover:text-white text-sm transition-colors">contact@clikconsult.com.ng</a>
             </li>
             <li className="flex gap-3 items-start">
               <Phone size={15} className="text-primary mt-0.5 shrink-0" />
@@ -95,10 +121,33 @@ export default function Footer() {
           </ul>
           <div className="mt-6">
             <p className="text-white/40 text-xs mb-3">Newsletter</p>
-            <div className="flex gap-2">
-              <input type="email" placeholder="Your email" className="flex-1 bg-white/5 border border-white/10 rounded-full px-4 py-2 text-sm text-white placeholder-white/20 focus:outline-none focus:border-primary/50" />
-              <button className="bg-primary text-dark rounded-full px-4 py-2 text-xs font-semibold hover:bg-primary-dark transition-colors">Go</button>
-            </div>
+            {status === 'success' ? (
+              <p className="flex items-center gap-2 text-primary text-xs">
+                <Check size={14} /> Subscribed! Thanks for joining.
+              </p>
+            ) : (
+              <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Your email"
+                  disabled={status === 'loading'}
+                  className="flex-1 bg-white/5 border border-white/10 rounded-full px-4 py-2 text-sm text-white placeholder-white/20 focus:outline-none focus:border-primary/50 disabled:opacity-50"
+                />
+                <button
+                  type="submit"
+                  disabled={status === 'loading'}
+                  className="bg-primary text-dark rounded-full px-4 py-2 text-xs font-semibold hover:bg-primary-dark transition-colors disabled:opacity-50"
+                >
+                  {status === 'loading' ? '...' : 'Go'}
+                </button>
+              </form>
+            )}
+            {status === 'error' && (
+              <p className="text-red-400 text-xs mt-2">Something went wrong. Please try again.</p>
+            )}
           </div>
         </div>
       </div>

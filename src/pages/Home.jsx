@@ -36,7 +36,7 @@ const process = [
   { title: 'Grow', desc: 'Ongoing support, optimisation, and marketing to keep the momentum going.' },
 ];
 
-const clients = ['Accenture', 'Deloitte', 'Sterling Bank', 'GTBank', 'MTN', 'Flutterwave'];
+const clients = ['Safemart', 'Kojaprojects', 'Marvicanihealth', 'Mainstay security', 'Catchypet', 'Tradevault', 'Glowbox', 'Finpulse', 'Northstar logistics', 'Eazybank', 'Lifeline', 'Techsphere', 'Greenfield farms', 'Urbanstyle', 'Nextgen solutions'];
 
 function splitCounter(value) {
   const match = String(value).match(/^([^0-9.-]*)([0-9.]+)(.*)$/);
