@@ -1013,6 +1013,11 @@ export const posts = [
         text: "5. They have case studies or references Ask to speak to current or past clients. Ask to see examples of campaigns they've run and the results they achieved. Any agency worth hiring will be happy to provide this.",
       },
       {
+        slug: "how-to-choose-a-digital-marketing-agency-in-nigeria",
+        text: "For a broader due-diligence checklist that applies anywhere in Nigeria, see our guide on what to ask before hiring a digital marketing agency.",
+        type: "related_link",
+      },
+      {
         type: "h2",
         text: "Digital Marketing Pricing in Akwa Ibom",
       },
@@ -1988,6 +1993,134 @@ export const posts = [
       {
         type: "p",
         text: "Does Clikconsult offer SEO services in Nigeria? Yes — we provide technical SEO, on-page optimisation, content marketing, and link building for Nigerian businesses. Contact us for a free SEO audit of your website.",
+      },
+    ],
+  },
+  {
+    slug: "how-to-choose-a-digital-marketing-agency-in-nigeria",
+    category: "Digital Marketing",
+    title: "How to Choose a Digital Marketing Agency in Nigeria (What to Ask Before You Hire)",
+    excerpt: "Most businesses pick an agency based on a good pitch. Here's the due-diligence process that actually predicts whether an agency will deliver — before you sign anything.",
+    date: "Jul 19, 2026",
+    readTime: "7 min",
+    color: "from-teal-500/15 to-cyan-500/5",
+    content: [
+      {
+        type: "intro",
+        text: "Nigeria's digital marketing space has grown fast — which is good for businesses that want help, and bad for businesses trying to tell a genuinely capable agency apart from one that's just good at selling itself. The pitch meeting rarely tells you the difference. What you ask, and what you check, does.",
+      },
+      {
+        type: "h2",
+        text: "Why the Wrong Choice Costs More Than the Contract",
+      },
+      {
+        type: "p",
+        text: "A bad agency doesn't just fail to deliver results — it costs you the months you spent waiting to find out, the ad budget spent without proper tracking, and often the credibility of \"digital marketing\" itself inside your own business. Founders who get burned once tend to under-invest in marketing for years afterward, which is a much bigger loss than the retainer fee.",
+      },
+      {
+        type: "h2",
+        text: "Questions to Ask Before You Sign Anything",
+      },
+      {
+        type: "list",
+        items: [
+          "\"Can you show me a client's actual results, not just the campaigns you ran?\" — Ask for numbers: leads generated, cost per acquisition, traffic growth. Screenshots of pretty ad creative are not evidence of performance.",
+          "\"What does your reporting look like, and how often do I get it?\" — Get a sample report before you sign, not after. If they can't show you one, they probably don't have a real reporting process.",
+          "\"Who exactly will be working on my account?\" — Many agencies pitch with senior talent and hand execution to junior staff. Ask who does the actual day-to-day work.",
+          "\"What happens if the results aren't there after 90 days?\" — Their answer tells you whether they've thought about accountability at all, or whether the retainer is the whole business model.",
+          "\"What's included, and what counts as a paid extra?\" — Landing pages, ad creative, copywriting, and analytics setup are sometimes billed separately. Get this in writing before you compare prices between agencies.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Red Flags That Should End the Conversation",
+      },
+      {
+        type: "list",
+        items: [
+          "Guaranteed Google rankings or a guaranteed number of leads — no legitimate agency can promise this, because they don't control the algorithm or your market.",
+          "Vague answers about tracking and analytics — if they can't clearly explain how they'll measure success before you've paid them, that won't improve after you have.",
+          "Reluctance to provide references or past client contacts — a confident agency wants you to talk to happy clients.",
+          "Pressure to sign quickly, or discounts tied to signing today — legitimate agencies don't need urgency tactics to win business.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "What a Fair Contract Looks Like",
+      },
+      {
+        type: "p",
+        text: "Look for a clear scope of work (what's actually included), a defined reporting cadence, ownership of your accounts and data (you should own your Google Ads, Meta Business Manager, and analytics accounts, not the agency), and a reasonable exit clause — 30 days' notice is standard, not a 12-month lock-in with no way out.",
+      },
+      {
+        slug: "top-digital-marketing-agencies-akwa-ibom",
+        text: "If you're specifically comparing agencies in Akwa Ibom, our local pricing and agency landscape guide breaks down what to expect at each budget level.",
+        type: "related_link",
+      },
+      {
+        type: "h2",
+        text: "How Clikconsult Approaches This Differently",
+      },
+      {
+        type: "p",
+        text: "We start every engagement with discovery, not a proposal — understanding your business, current digital presence, and goals before we recommend anything. You own your accounts and your data from day one. You get monthly reporting in plain language, tied to leads and revenue, not vanity metrics. And there's no long lock-in: if the work isn't delivering, you're not stuck.",
+      },
+    ],
+  },
+  {
+    slug: "marketing-automation-nigerian-businesses-guide",
+    category: "Automation",
+    title: "Marketing Automation for Nigerian Businesses: A Practical Guide",
+    excerpt: "Most marketing automation content is written for US and European businesses using tools that don't fit the Nigerian market. Here's what actually works — and what to automate first.",
+    date: "Jul 19, 2026",
+    readTime: "7 min",
+    color: "from-amber-500/15 to-orange-500/5",
+    content: [
+      {
+        type: "intro",
+        text: "Marketing automation gets talked about like it's one thing — a magic tool that runs your marketing while you sleep. In practice, it's a set of specific, unglamorous processes: following up on leads automatically, sending the right email at the right time, and making sure no inquiry sits unanswered because someone forgot to check a form submission. Most Nigerian businesses aren't automating any of this, which means competitors who do are winning on speed alone.",
+      },
+      {
+        type: "h2",
+        text: "Why Speed of Follow-Up Matters More Than Most Businesses Realise",
+      },
+      {
+        type: "p",
+        text: "Research on lead response time consistently shows the same pattern: the odds of qualifying a lead drop sharply after the first few minutes, and drop further every hour after that. A business that responds to a website inquiry in 5 minutes will out-convert a better business that responds in 24 hours — every time. Manual follow-up, done by a busy sales team, almost never hits that window consistently. Automation does.",
+      },
+      {
+        type: "h2",
+        text: "What to Automate First",
+      },
+      {
+        type: "list",
+        items: [
+          "Instant lead acknowledgement — an automatic email or WhatsApp message the moment someone fills out a form, even before a human responds. This alone dramatically improves perceived responsiveness.",
+          "Lead routing — automatically assigning new inquiries to the right team member based on product interest, location, or budget, instead of a shared inbox nobody owns.",
+          "Follow-up sequences — a scheduled series of emails or messages for leads who don't respond immediately, so nothing goes cold from being forgotten.",
+          "Abandoned-cart or abandoned-form recovery — for e-commerce or service businesses, automatically re-engaging someone who started an inquiry or purchase but didn't finish.",
+          "Reporting rollups — automatically pulling leads, sales, and marketing data into one dashboard instead of manually compiling spreadsheets every week.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "Tools That Actually Work for the Nigerian Market",
+      },
+      {
+        type: "p",
+        text: "Many popular automation platforms are priced in dollars with limits that make sense for US-scale businesses but not for a Nigerian SME's lead volume. We generally recommend starting with the automation features already built into affordable CRMs (HubSpot's free tier, or Zoho), paired with WhatsApp Business API integration for the channel Nigerian customers actually respond on fastest — rather than starting with an enterprise platform designed for a different market.",
+      },
+      {
+        type: "h2",
+        text: "A Realistic Starting Point",
+      },
+      {
+        type: "p",
+        text: "You don't need to automate everything at once. Start with instant lead acknowledgement and one follow-up sequence — that's usually a one-to-two-week build, and it's the highest-impact automation for most sales-driven businesses. Add lead routing and reporting once the basics are running reliably.",
+      },
+      {
+        type: "p",
+        text: "If you want a sense of what's possible before committing to a build, our piece on what web automation actually is walks through the broader category, and our case study on automating a client's sales pipeline shows a full build end to end.",
       },
     ],
   },

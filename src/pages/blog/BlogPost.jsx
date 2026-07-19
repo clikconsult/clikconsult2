@@ -38,6 +38,19 @@ function ContentBlock({ block }) {
           ))}
         </ul>
       );
+    case 'related_link':
+      return (
+        <Link
+          to={`/blog/${block.slug}`}
+          className="block mb-8 p-4 rounded-xl border border-primary/20 bg-primary/5 hover:bg-primary/10 transition-colors group"
+        >
+          <span className="text-xs text-primary/70 font-medium uppercase tracking-wide">Related reading</span>
+          <span className="flex items-center justify-between mt-1">
+            <span className="text-white/85 group-hover:text-white transition-colors font-medium">{block.text}</span>
+            <ArrowRight size={16} className="text-primary/60 group-hover:translate-x-1 transition-transform shrink-0 ml-3" />
+          </span>
+        </Link>
+      );
     default:
       return null;
   }

@@ -19,6 +19,8 @@ const routes = [
   '/blog/what-is-web-automation-nigeria',
   '/blog/react-native-vs-flutter-nigerian-startups-2025',
   '/blog/seo-for-nigerian-businesses-complete-guide',
+  '/blog/how-to-choose-a-digital-marketing-agency-in-nigeria',
+  '/blog/marketing-automation-nigerian-businesses-guide',
   '/contact',
   '/careers',
   '/privacy',
