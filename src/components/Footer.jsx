@@ -152,6 +152,47 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* SEO Sitemap Band — Marketing Services + Locations */}
+      <div className="border-t border-white/5">
+        <div className="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <p className="text-white/50 text-xs font-semibold uppercase tracking-widest mb-4">Digital Marketing Services</p>
+            <div className="flex flex-wrap gap-x-4 gap-y-2">
+              {[
+                ['SEO', '/services/digital-marketing/seo'],
+                ['PPC / Google Ads', '/services/digital-marketing/ppc'],
+                ['Social Media', '/services/digital-marketing/social-media'],
+                ['Email Marketing', '/services/digital-marketing/email-marketing'],
+                ['Content Marketing', '/services/digital-marketing/content-marketing'],
+                ['CRO', '/services/digital-marketing/cro'],
+                ['E-commerce Marketing', '/services/digital-marketing/ecommerce-marketing'],
+                ['Analytics & Reporting', '/services/digital-marketing/analytics'],
+                ['Affiliate Marketing', '/services/digital-marketing/affiliate-marketing'],
+                ['Influencer Marketing', '/services/digital-marketing/influencer-marketing'],
+                ['Online Reputation Management', '/services/digital-marketing/orm'],
+                ['Video Marketing', '/services/digital-marketing/video-marketing'],
+              ].map(([label, path]) => (
+                <Link key={path} to={path} className="text-white/35 hover:text-primary text-xs transition-colors">{label}</Link>
+              ))}
+            </div>
+          </div>
+          <div>
+            <p className="text-white/50 text-xs font-semibold uppercase tracking-widest mb-4">Where We Work</p>
+            <div className="flex flex-wrap gap-x-4 gap-y-2">
+              {[
+                ['Uyo', '/locations/uyo'],
+                ['Akwa Ibom', '/locations/akwa-ibom'],
+                ['Lagos', '/locations/lagos'],
+                ['Abuja', '/locations/abuja'],
+                ['Port Harcourt', '/locations/port-harcourt'],
+              ].map(([label, path]) => (
+                <Link key={path} to={path} className="text-white/35 hover:text-primary text-xs transition-colors">{label}</Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Bottom bar */}
       <div className="border-t border-white/5 max-w-6xl mx-auto px-6 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
         <p className="text-white/20 text-xs">© {year} Clikconsult. All rights reserved.</p>
