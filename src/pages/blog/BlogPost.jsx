@@ -41,7 +41,7 @@ function ContentBlock({ block }) {
     case 'related_link':
       return (
         <Link
-          to={`/blog/${block.slug}`}
+          to={block.path || `/blog/${block.slug}`}
           className="block mb-8 p-4 rounded-xl border border-primary/20 bg-primary/5 hover:bg-primary/10 transition-colors group"
         >
           <span className="text-xs text-primary/70 font-medium uppercase tracking-wide">Related reading</span>

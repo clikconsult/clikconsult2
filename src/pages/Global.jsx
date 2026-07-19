@@ -141,6 +141,9 @@ export default function Global() {
             <p className="text-white/25 text-xs mt-6">
               Ranges reflect typical project scope. Final pricing depends on requirements, integrations, and timeline. We'll always give you a fixed quote before work begins.
             </p>
+            <Link to="/blog/us-agency-vs-nigeria-development-team-cost-comparison-2026" className="inline-flex items-center gap-1.5 text-primary/80 hover:text-primary text-sm mt-4 transition-colors">
+              See a full cost comparison against US agency pricing <ArrowRight size={14} />
+            </Link>
           </Reveal>
         </div>
       </section>
