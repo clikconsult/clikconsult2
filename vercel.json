@@ -1,4 +1,17 @@
 {
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.clikconsult.com.ng"
+        }
+      ],
+      "destination": "https://clikconsult.com.ng/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/((?!sitemap.xml|robots.txt).*)",
