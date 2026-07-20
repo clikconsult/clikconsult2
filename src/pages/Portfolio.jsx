@@ -4,9 +4,38 @@ import { ArrowRight, ExternalLink } from 'lucide-react';
 import Reveal from '../components/Reveal';
 import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
-import Illustration, { projectToIllustration } from '../components/Illustrations';
 
 const categories = ['All', 'Web Dev', 'Mobile App', 'Automation', 'Marketing'];
+
+const visualSystems = {
+  'TradeVault Platform': { kicker: 'LIVE MARKET', mark: 'TV', detail: '02:48:16 UTC', shape: 'rounded-full' },
+  'GlowBox E-commerce': { kicker: 'BEAUTY, CURATED', mark: 'GB', detail: 'New ritual', shape: 'rounded-[2.5rem]' },
+  'FinPulse Mobile App': { kicker: 'MONEY, MOVING', mark: '₦', detail: 'Balance / 84,200', shape: 'rounded-[2rem]' },
+  'NorthStar Logistics App': { kicker: 'ON THE WAY', mark: 'NS', detail: '12 deliveries live', shape: 'rounded-full' },
+  'Invoice Automation Pipeline': { kicker: 'SYSTEMS, CLEAR', mark: '✓', detail: '28 hrs saved weekly', shape: 'rounded-[1.75rem]' },
+  'Lead Scraping & CRM Sync': { kicker: 'SIGNAL FOUND', mark: '+', detail: '1,200 leads / month', shape: 'rounded-full' },
+  'Sterling Homes SEO Campaign': { kicker: 'FOUND, FIRST', mark: 'SH', detail: '+320% organic traffic', shape: 'rounded-[2.5rem]' },
+  'EduReach Google Ads': { kicker: 'LEARN WITHOUT LIMITS', mark: 'ER', detail: '4.8× return on ad spend', shape: 'rounded-full' },
+  'Apex Retail POS System': { kicker: 'RETAIL, IN FLOW', mark: 'AP', detail: '50+ daily transactions', shape: 'rounded-[1.75rem]' },
+};
+
+function CaseStudyVisual({ project, index }) {
+  const visual = visualSystems[project.title];
+  return <div className={`relative aspect-[16/10] overflow-hidden bg-gradient-to-br ${project.color}`}>
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,255,255,.2),transparent_24%),linear-gradient(135deg,rgba(255,255,255,.08),transparent_55%)]" />
+    <div className="absolute inset-5 border border-white/15" />
+    <span className="absolute left-7 top-7 text-[10px] tracking-[.24em] font-semibold text-white/65">{visual.kicker}</span>
+    <span className="absolute right-7 top-7 text-[10px] font-mono text-white/45">0{index + 1}</span>
+    <div className={`absolute -right-7 -bottom-12 h-44 w-44 border border-white/25 bg-dark/35 backdrop-blur-md ${visual.shape} flex items-center justify-center shadow-2xl`}>
+      <span className="font-display text-5xl font-bold tracking-tighter text-white/90">{visual.mark}</span>
+    </div>
+    <div className="absolute left-7 bottom-7 max-w-[68%]">
+      <p className="font-display text-3xl font-bold leading-[.88] tracking-[-.07em] text-white uppercase">{project.title.replace(/ Platform| App| System| Campaign| Pipeline| E-commerce/, '')}</p>
+      <p className="mt-3 text-[10px] font-medium uppercase tracking-[.16em] text-white/60">{visual.detail}</p>
+    </div>
+    <div className="absolute right-7 bottom-7 h-8 w-8 rounded-full border border-white/30 bg-white/10" />
+  </div>;
+}
 
 const projects = [
   {
@@ -143,8 +172,9 @@ export default function Portfolio() {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.3, delay: i * 0.05 }}
               >
-                <div className={`card-glass p-7 h-full flex flex-col bg-gradient-to-br ${p.color} group cursor-pointer`}>
-                  <div className="aspect-[16/9] rounded-lg bg-white/5 border border-white/5 overflow-hidden mb-5"><Illustration variant={projectToIllustration(p.title)} className="w-full h-full" /></div>
+                <div className="card-glass h-full overflow-hidden flex flex-col group cursor-pointer hover:-translate-y-1 transition-transform duration-500">
+                  <CaseStudyVisual project={p} index={i} />
+                  <div className={`p-7 flex flex-col flex-1 bg-gradient-to-br ${p.color}`}>
                   {/* Category tag */}
                   <span className="inline-block text-xs font-medium text-primary border border-primary/30 rounded-full px-3 py-1 mb-5 self-start">
                     {p.category}
@@ -169,6 +199,7 @@ export default function Portfolio() {
                   <Link to="/contact" className="flex items-center gap-1.5 text-primary text-xs font-medium group-hover:gap-3 transition-all">
                     Start a similar project <ArrowRight size={12} />
                   </Link>
+                  </div>
                 </div>
               </motion.div>
             ))}
