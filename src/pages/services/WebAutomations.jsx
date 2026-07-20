@@ -52,6 +52,7 @@ const data = {
     { label: 'Digital Marketing', path: '/services/digital-marketing' },
     { label: 'Desktop Applications', path: '/services/desktop-apps' },
   ],
+  illustration: 'automation',
 };
 
 export default function WebAutomations() {

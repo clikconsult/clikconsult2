@@ -52,6 +52,7 @@ const data = {
     { label: 'Web Automations', path: '/services/web-automations' },
     { label: 'Mobile App Development', path: '/services/mobile-apps' },
   ],
+  illustration: 'desktop',
 };
 
 export default function DesktopApps() {

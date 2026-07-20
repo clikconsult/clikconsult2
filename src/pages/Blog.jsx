@@ -3,6 +3,7 @@ import { ArrowRight, Clock } from 'lucide-react';
 import Reveal from '../components/Reveal';
 import SEO from '../components/SEO';
 import { posts, categoryColors } from '../data/blogPosts';
+import Illustration, { categoryToIllustration } from '../components/Illustrations';
 
 export default function Blog() {
   const featured = posts[0];
@@ -51,8 +52,8 @@ export default function Blog() {
                   Read article <ArrowRight size={15} />
                 </Link>
               </div>
-              <div className="aspect-[4/3] rounded-xl bg-white/5 border border-white/5 flex items-center justify-center">
-                <span className="text-white/10 font-display text-6xl font-bold">01</span>
+              <div className="aspect-[4/3] rounded-xl bg-white/5 border border-white/5 overflow-hidden relative">
+                <Illustration variant={categoryToIllustration(featured.category)} className="w-full h-full" />
               </div>
             </div>
           </div>
@@ -66,6 +67,7 @@ export default function Blog() {
             <Reveal key={post.slug} delay={i * 0.08}>
               <Link to={`/blog/${post.slug}`} className="block group h-full">
                 <div className={`card-glass p-7 h-full flex flex-col bg-gradient-to-br ${post.color} group-hover:border-primary/30 transition-all duration-300`}>
+                  <div className="aspect-[16/9] rounded-lg bg-white/5 border border-white/5 overflow-hidden mb-5 -mt-1"><Illustration variant={categoryToIllustration(post.category)} className="w-full h-full" /></div>
                   <span className={`inline-block text-xs font-medium border rounded-full px-3 py-1 mb-4 self-start ${categoryColors[post.category] || 'text-primary border-primary/30 bg-primary/5'}`}>
                     {post.category}
                   </span>

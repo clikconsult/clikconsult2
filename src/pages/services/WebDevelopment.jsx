@@ -52,6 +52,7 @@ const data = {
     { label: 'Web Automations', path: '/services/web-automations' },
     { label: 'Digital Marketing', path: '/services/digital-marketing' },
   ],
+  illustration: 'webdev',
 };
 
 export default function WebDevelopment() {

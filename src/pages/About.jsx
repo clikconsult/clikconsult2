@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Target, Eye, Heart } from 'lucide-react';
 import Reveal from '../components/Reveal';
 import SEO from '../components/SEO';
+import Illustration from '../components/Illustrations';
 
 const team = [
   { name: 'Akan Udoette', role: 'Founder & CEO', bio: 'Full-stack developer and strategist with 6+ years building digital products for businesses across Africa and beyond.' },
@@ -43,6 +44,7 @@ export default function About() {
         <Reveal>
           <div className="aspect-[4/3] rounded-2xl bg-dark-3 border border-white/5 overflow-hidden relative flex items-center justify-center">
             <div className="absolute inset-0 bg-mesh" />
+            <Illustration variant="network" className="absolute inset-0 w-full h-full opacity-60" />
             <div className="relative z-10 text-center px-8">
               <img
                 src="/logo-icon.png"

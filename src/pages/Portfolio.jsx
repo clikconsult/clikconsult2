@@ -4,6 +4,7 @@ import { ArrowRight, ExternalLink } from 'lucide-react';
 import Reveal from '../components/Reveal';
 import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
+import Illustration, { categoryToIllustration } from '../components/Illustrations';
 
 const categories = ['All', 'Web Dev', 'Mobile App', 'Automation', 'Marketing'];
 
@@ -143,6 +144,7 @@ export default function Portfolio() {
                 transition={{ duration: 0.3, delay: i * 0.05 }}
               >
                 <div className={`card-glass p-7 h-full flex flex-col bg-gradient-to-br ${p.color} group cursor-pointer`}>
+                  <div className="aspect-[16/9] rounded-lg bg-white/5 border border-white/5 overflow-hidden mb-5"><Illustration variant={categoryToIllustration(p.category)} className="w-full h-full" /></div>
                   {/* Category tag */}
                   <span className="inline-block text-xs font-medium text-primary border border-primary/30 rounded-full px-3 py-1 mb-5 self-start">
                     {p.category}

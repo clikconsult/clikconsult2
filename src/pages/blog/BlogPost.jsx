@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Reveal from '../../components/Reveal';
 import SEO from '../../components/SEO';
 import { posts, categoryColors } from '../../data/blogPosts';
+import Illustration, { categoryToIllustration } from '../../components/Illustrations';
 
 function ContentBlock({ block }) {
   switch (block.type) {
@@ -135,9 +136,7 @@ export default function BlogPost() {
           className={`aspect-[16/7] rounded-2xl bg-gradient-to-br ${post.color} border border-white/5 flex items-center justify-center overflow-hidden relative`}
         >
           <div className="absolute inset-0 bg-mesh" />
-          <span className="font-display text-[120px] font-bold text-white/5 select-none">
-            {post.category.charAt(0)}
-          </span>
+          <Illustration variant={categoryToIllustration(post.category)} className="absolute inset-0 w-full h-full opacity-90" />
           <div className="absolute bottom-6 left-8">
             <span className={`text-xs font-medium border rounded-full px-3 py-1 ${categoryColors[post.category] || 'text-primary border-primary/30 bg-primary/5'}`}>
               {post.category}

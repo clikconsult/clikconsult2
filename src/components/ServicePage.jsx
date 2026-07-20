@@ -2,8 +2,9 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 import Reveal from '../components/Reveal';
 import SEO from './SEO';
+import Illustration from './Illustrations';
 
-export default function ServicePage({ hero, overview, features, process, faqs, related, seo }) {
+export default function ServicePage({ hero, overview, features, process, faqs, related, seo, illustration = 'webdev' }) {
   return (
     <main className="pt-32">
       <SEO
@@ -12,7 +13,7 @@ export default function ServicePage({ hero, overview, features, process, faqs, r
         path={seo?.path || '/'}
       />
       {/* Hero */}
-      <section className="max-w-5xl mx-auto px-6 pb-24">
+      <section className="max-w-6xl mx-auto px-6 pb-24 grid lg:grid-cols-2 gap-12 items-center">
         <Reveal>
           <p className="section-label mb-4">{hero.label}</p>
           <h1 className="section-heading mb-6 max-w-3xl">{hero.heading}</h1>
@@ -22,6 +23,7 @@ export default function ServicePage({ hero, overview, features, process, faqs, r
             <Link to="/portfolio" className="btn-outline px-7 py-3.5">See Our Work</Link>
           </div>
         </Reveal>
+        <Reveal delay={0.15}><div className="aspect-square max-w-md mx-auto rounded-2xl bg-dark-3 border border-white/5 relative overflow-hidden"><div className="absolute inset-0 bg-mesh" /><Illustration variant={illustration} className="relative z-10 w-full h-full" /></div></Reveal>
       </section>
 
       {/* Overview */}

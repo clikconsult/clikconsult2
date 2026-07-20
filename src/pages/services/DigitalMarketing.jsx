@@ -3,6 +3,7 @@ import { ArrowRight, TrendingUp, BarChart2, PieChart } from 'lucide-react';
 import Reveal from '../../components/Reveal';
 import SEO from '../../components/SEO';
 import { marketingChannels } from '../../data/marketingChannels';
+import Illustration from '../../components/Illustrations';
 
 const results = [
   { metric: '+320%', label: 'Organic traffic growth', period: '6 months — SaaS client' },
@@ -20,7 +21,7 @@ export default function DigitalMarketing() {
         path="/services/digital-marketing"
       />
       {/* Hero */}
-      <section className="max-w-5xl mx-auto px-6 pb-24">
+      <section className="max-w-6xl mx-auto px-6 pb-24 grid lg:grid-cols-2 gap-12 items-center">
         <Reveal>
           <p className="section-label mb-4">Digital Marketing</p>
           <h1 className="section-heading mb-6 max-w-3xl">
@@ -35,6 +36,7 @@ export default function DigitalMarketing() {
             <Link to="/portfolio" className="btn-outline px-7 py-3.5">See Our Results</Link>
           </div>
         </Reveal>
+        <Reveal delay={0.15}><div className="aspect-square max-w-md mx-auto rounded-2xl bg-dark-3 border border-white/5 relative overflow-hidden"><div className="absolute inset-0 bg-mesh" /><Illustration variant="marketing" className="relative z-10 w-full h-full" /></div></Reveal>
       </section>
 
       {/* Results bar */}
