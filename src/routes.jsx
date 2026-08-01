@@ -1,30 +1,23 @@
-import { lazy } from 'react'
 import Layout from './App.jsx'
 import { posts } from './data/blogPosts.js'
 import { marketingChannels } from './data/marketingChannels.js'
-
-const Home = lazy(() => import('./pages/Home'))
-const About = lazy(() => import('./pages/About'))
-const Portfolio = lazy(() => import('./pages/Portfolio'))
-const Blog = lazy(() => import('./pages/Blog'))
-const BlogPost = lazy(() => import('./pages/blog/BlogPost'))
-const Contact = lazy(() => import('./pages/Contact'))
-const Careers = lazy(() => import('./pages/Careers'))
-const NotFound = lazy(() => import('./pages/NotFound'))
-const Privacy = lazy(() => import('./pages/Legal').then((module) => ({ default: module.Privacy })))
-const Terms = lazy(() => import('./pages/Legal').then((module) => ({ default: module.Terms })))
-const UyoPage = lazy(() => import('./pages/Locations').then((module) => ({ default: module.UyoPage })))
-const AkwaIbomPage = lazy(() => import('./pages/Locations').then((module) => ({ default: module.AkwaIbomPage })))
-const LagosPage = lazy(() => import('./pages/Locations').then((module) => ({ default: module.LagosPage })))
-const AbujaPage = lazy(() => import('./pages/Locations').then((module) => ({ default: module.AbujaPage })))
-const PortHarcourtPage = lazy(() => import('./pages/Locations').then((module) => ({ default: module.PortHarcourtPage })))
-const Global = lazy(() => import('./pages/Global'))
-const WebDevelopment = lazy(() => import('./pages/services/WebDevelopment'))
-const MobileApps = lazy(() => import('./pages/services/MobileApps'))
-const DesktopApps = lazy(() => import('./pages/services/DesktopApps'))
-const WebAutomations = lazy(() => import('./pages/services/WebAutomations'))
-const DigitalMarketing = lazy(() => import('./pages/services/DigitalMarketing'))
-const MarketingChannel = lazy(() => import('./pages/services/marketing/MarketingChannel'))
+import Home from './pages/Home'
+import About from './pages/About'
+import Portfolio from './pages/Portfolio'
+import Blog from './pages/Blog'
+import BlogPost from './pages/blog/BlogPost'
+import Contact from './pages/Contact'
+import Careers from './pages/Careers'
+import NotFound from './pages/NotFound'
+import { Privacy, Terms } from './pages/Legal'
+import { UyoPage, AkwaIbomPage, LagosPage, AbujaPage, PortHarcourtPage } from './pages/Locations'
+import Global from './pages/Global'
+import WebDevelopment from './pages/services/WebDevelopment'
+import MobileApps from './pages/services/MobileApps'
+import DesktopApps from './pages/services/DesktopApps'
+import WebAutomations from './pages/services/WebAutomations'
+import DigitalMarketing from './pages/services/DigitalMarketing'
+import MarketingChannel from './pages/services/marketing/MarketingChannel'
 
 const blogStaticPaths = posts.map((post) => `blog/${post.slug}`)
 const marketingChannelStaticPaths = marketingChannels.map((channel) => `services/digital-marketing/${channel.slug}`)
