@@ -11,11 +11,5 @@
       "destination": "https://clikconsult.com.ng/:path*",
       "permanent": true
     }
-  ],
-  "rewrites": [
-    {
-      "source": "/((?!sitemap.xml|robots.txt).*)",
-      "destination": "/index.html"
-    }
   ]
 }
